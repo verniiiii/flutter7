@@ -15,7 +15,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerConfig: _router,
-      title: 'Финансовый Трекер',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         useMaterial3: true,
