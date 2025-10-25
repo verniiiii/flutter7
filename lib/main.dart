@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
 
   final GoRouter _router = AppRouter().router;
 
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
