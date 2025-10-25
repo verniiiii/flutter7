@@ -94,6 +94,7 @@ class _TransactionsListScreenState extends State<TransactionsListScreen> {
   void _showTransactionDetails(String transactionId) {
     // ГОРИЗОНТАЛЬНАЯ НАВИГАЦИЯ - маршрутизированная (замена текущего экрана)
     context.pushReplacement('/details?id=$transactionId');
+
   }
 
 
