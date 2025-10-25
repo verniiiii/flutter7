@@ -36,6 +36,7 @@ class _TransactionsListScreenState extends State<TransactionsListScreen> {
   ];
 
   void _addTransaction() {
+
     // ВЕРТИКАЛЬНАЯ НАВИГАЦИЯ - страничная
     Navigator.push(
       context,
@@ -70,6 +71,7 @@ class _TransactionsListScreenState extends State<TransactionsListScreen> {
   }
 
   void _editTransaction(Transaction transaction) {
+
     // ВЕРТИКАЛЬНАЯ НАВИГАЦИЯ - страничная
     Navigator.push(
       context,
@@ -94,15 +96,18 @@ class _TransactionsListScreenState extends State<TransactionsListScreen> {
     context.pushReplacement('/details?id=$transactionId');
   }
 
+
   void _showStatistics() {
     // ВЕРТИКАЛЬНАЯ НАВИГАЦИЯ - маршрутизированная
     context.push('/statistics');
   }
 
+
   void _showProfile() {
     // ВЕРТИКАЛЬНАЯ НАВИГАЦИЯ - маршрутизированная
     context.push('/profile');
   }
+
 
   @override
   Widget build(BuildContext context) {
