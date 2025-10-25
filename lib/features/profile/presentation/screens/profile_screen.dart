@@ -60,6 +60,7 @@ class ProfileScreen extends StatelessWidget {
                     title: const Text('Выйти'),
                     onTap: () {
                       context.go('/'); // ГОРИЗОНТАЛЬНАЯ НАВИГАЦИЯ - замена на корневой экран
+
                     },
                   ),
                 ],
