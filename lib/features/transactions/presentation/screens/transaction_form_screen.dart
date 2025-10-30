@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../data/transaction_model.dart';
-import '../../../../core/constants/categories.dart'; // Правильный импорт
+import '../../../../core/constants/categories.dart';
+import '../../../../features/transactions/presentation/screens/transactions_list_screen.dart';
 
 class TransactionFormScreen extends StatefulWidget {
   final void Function(Transaction) onSave;
@@ -19,6 +20,7 @@ class _TransactionFormScreenState extends State<TransactionFormScreen> {
   TransactionType _type = TransactionType.expense;
   String _selectedCategory = 'Продукты';
 
+  // Код из transaction_form_screen.dart
   void _submit() {
     final title = _titleController.text.trim();
     final description = _descriptionController.text.trim();
@@ -40,7 +42,10 @@ class _TransactionFormScreenState extends State<TransactionFormScreen> {
     );
 
     widget.onSave(newTransaction);
-    Navigator.pop(context);
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => const TransactionsListScreen()),
+    );
   }
 
   void _showError(String message) {
