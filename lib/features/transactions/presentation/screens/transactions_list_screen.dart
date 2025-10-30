@@ -39,19 +39,7 @@ class _TransactionsListScreenState extends State<TransactionsListScreen> {
   ];
 
   void _addTransaction() {
-    // ВЕРТИКАЛЬНАЯ НАВИГАЦИЯ - страничная
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => TransactionFormScreen(
-          onSave: (transaction) {
-            setState(() {
-              _transactions.insert(0, transaction);
-            });
-          },
-        ),
-      ),
-    );
+    context.push('/add');
   }
 
   void _toggleTransaction(String id) {
@@ -72,24 +60,9 @@ class _TransactionsListScreenState extends State<TransactionsListScreen> {
     });
   }
 
+  // Код из transactions_list_screen.dart
   void _editTransaction(Transaction transaction) {
-    // ВЕРТИКАЛЬНАЯ НАВИГАЦИЯ - страничная
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => EditTransactionScreen(
-          transaction: transaction,
-          onUpdate: (updatedTransaction) {
-            setState(() {
-              final index = _transactions.indexWhere((t) => t.id == updatedTransaction.id);
-              if (index != -1) {
-                _transactions[index] = updatedTransaction;
-              }
-            });
-          },
-        ),
-      ),
-    );
+    context.push('/edit/${transaction.id}', extra: transaction);
   }
 
   void _showTransactionDetails(String transactionId) {
@@ -99,20 +72,13 @@ class _TransactionsListScreenState extends State<TransactionsListScreen> {
   }
 
 
+  // Код из transactions_list_screen.dart
   void _showStatistics() {
-    // ВЕРТИКАЛЬНАЯ НАВИГАЦИЯ - страничная
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const StatisticsScreen()),
-    );
+    context.push('/statistics');
   }
 
   void _showProfile() {
-    // ВЕРТИКАЛЬНАЯ НАВИГАЦИЯ - страничная
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const ProfileScreen()),
-    );
+    context.push('/profile');
   }
 
 

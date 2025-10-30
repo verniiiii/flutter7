@@ -20,7 +20,6 @@ class _TransactionFormScreenState extends State<TransactionFormScreen> {
   TransactionType _type = TransactionType.expense;
   String _selectedCategory = 'Продукты';
 
-  // Код из transaction_form_screen.dart
   void _submit() {
     final title = _titleController.text.trim();
     final description = _descriptionController.text.trim();
