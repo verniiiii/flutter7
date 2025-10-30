@@ -5,6 +5,9 @@ import '../../data/transaction_model.dart';
 import '../../../../core/constants/categories.dart';
 import 'transaction_form_screen.dart';
 import 'edit_transaction_screen.dart';
+import 'statistics_screen.dart';
+import '../../../../features/profile/presentation/screens/profile_screen.dart';
+
 
 class TransactionsListScreen extends StatefulWidget {
   const TransactionsListScreen({super.key});
@@ -36,7 +39,6 @@ class _TransactionsListScreenState extends State<TransactionsListScreen> {
   ];
 
   void _addTransaction() {
-
     // ВЕРТИКАЛЬНАЯ НАВИГАЦИЯ - страничная
     Navigator.push(
       context,
@@ -71,7 +73,6 @@ class _TransactionsListScreenState extends State<TransactionsListScreen> {
   }
 
   void _editTransaction(Transaction transaction) {
-
     // ВЕРТИКАЛЬНАЯ НАВИГАЦИЯ - страничная
     Navigator.push(
       context,
@@ -99,14 +100,19 @@ class _TransactionsListScreenState extends State<TransactionsListScreen> {
 
 
   void _showStatistics() {
-    // ВЕРТИКАЛЬНАЯ НАВИГАЦИЯ - маршрутизированная
-    context.push('/statistics');
+    // ВЕРТИКАЛЬНАЯ НАВИГАЦИЯ - страничная
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const StatisticsScreen()),
+    );
   }
 
-
   void _showProfile() {
-    // ВЕРТИКАЛЬНАЯ НАВИГАЦИЯ - маршрутизированная
-    context.push('/profile');
+    // ВЕРТИКАЛЬНАЯ НАВИГАЦИЯ - страничная
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const ProfileScreen()),
+    );
   }
 
 
